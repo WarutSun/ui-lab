@@ -35,3 +35,14 @@
   - Pizza name: Lab Pizza 20261124-201856
   - Elapsed time: [From results/run2/report.html]
 
+
+## Part 4: Cypress
+
+- node --version: v22.14.0
+- npm --version: 10.9.2
+- npx cypress version: 16.2.1
+
+- Step 4.3, failure message for the wrong title:
+  Timed out retrying after 10000ms.
+  Actual title: Web form - target page
+  Expected title: Web Form - target page
