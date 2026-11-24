@@ -46,3 +46,27 @@
   Timed out retrying after 10000ms.
   Actual title: Web form - target page
   Expected title: Web Form - target page
+
+## Part B: Reflection
+
+### Question 1
+The Max Calories per Slice input shares the same ID with other inputs on the page. Using the ID alone could select the wrong field. I used an XPath locator based on its label to identify the correct input. Giving this field a unique ID would make the locator simpler and more reliable.
+
+### Question 2
+Step 7 uses a consistency oracle because it compares the tool in the recommendation with the tool in the admin list. Both values should match for the same pizza. In my Cypress Run 2, both showed Pizza cutter. This check could detect a bug where the admin page displays incorrect information.
+
+### Question 3
+QP-01 checks that the vegetarian checkbox is selected, but it does not verify the ingredients. I would check the ingredients returned by the API against a reliable list of vegetarian ingredients. The test would need ingredient classification data from the API or another trusted source. It should fail if any non-vegetarian ingredient is found.
+
+### Question 4
+Robot Framework uses explicit waiting keywords, while Cypress automatically retries queries and assertions. Robot Framework was easy to understand because its keywords followed the manual test steps. Cypress provided useful API interception, screenshots, and videos. Robot Framework generated detailed HTML reports. Both tools passed QP-01, although Cypress had problems switching between specs in Chrome and Edge.
+
+### Question 5
+I would choose Cypress for Project 2 because it supports automatic retries and API interception. These features help test dynamic websites and verify API responses. Screenshots and videos also make debugging easier. However, I would investigate the browser compatibility issue before using it in Project 2.
+
+### Question 6: Robot Framework
+The Max Calories locator is stored in the quickpizza.resource file as the MAX CALORIES variable. If QuickPizza changes the input locator, I would update it in that resource file. The pizza_scenario.robot test would not need to change because it calls reusable keywords. This reduces duplicated code and makes maintenance easier.
+
+### Question 7: Cypress
+Cypress clears cookies before each test to maintain test isolation. QuickPizza uses a cookie to connect the browser to the same server. If Steps 6 and 7 were placed in another test, the browser might connect to a different server and fail to find the pizza. Keeping all seven steps in one test preserves the required state.
+
